@@ -66,7 +66,9 @@ export default class TabViewPagerAndroid<T: *> extends React.Component<
   };
 
   _handlePageChange = (index: number) => {
-    if (this._isIdle && this._currentIndex !== index) {
+    // if (this._isIdle && this._currentIndex !== index) {
+    // remove idle because in RN0.60 is not working
+    if (this._currentIndex !== index) {
       this._setPage(index);
       this._currentIndex = index;
     }
